@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^10.172.31.121$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^www.10.172.31.121$
+    RewriteCond %{REQUEST_URI} !project/public/
+    RewriteRule (.*) /public/$1 [L]
+</IfModule>
